@@ -1,14 +1,27 @@
 int whoWins(Map<String, int> teamA, Map<String, int> teamB) {
-  int scoreA = calculateScore(teamA);
-  int scoreB = calculateScore(teamB);
+  var a = 0;
+  var b = 0;
 
-  return scoreA.compareTo(scoreB);
-}
+  teamA.forEach((key, value) {
+    if (key == 'Free throws')
+      a += value;
+    else if (key == '2 pointer')
+      a += value * 2;
+    else if (key == '3 pointer') a += value * 3;
+  });
 
-int calculateScore(Map<String, int> team) {
-  int freeThrows = team['Free throws'] ?? 0;
-  int twoPointer = team['2 pointer'] ?? 0;
-  int threePointer = team['3 pointer'] ?? 0;
+  teamB.forEach((key, value) {
+    if (key == 'Free throws')
+      b += value;
+    else if (key == '2 pointer')
+      b += value * 2;
+    else if (key == '3 pointer') b += value * 3;
+  });
 
-  return (freeThrows + (twoPointer * 2) + (threePointer * 3));
+  if (a > b)
+    return 1;
+  else if (a == b)
+    return 0;
+  else
+    return 2;
 }
