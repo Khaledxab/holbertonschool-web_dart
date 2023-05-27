@@ -23,6 +23,7 @@ int whoWins(Map<String, int> teamA, Map<String, int> teamB) {
     return 2;
   } else if (teamAPoints == teamBPoints) {
     return 0;
-  }
-  return -1;
+  } else {
+    return -1;
+  } 
 }
