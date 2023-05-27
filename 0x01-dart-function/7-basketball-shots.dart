@@ -1,3 +1,5 @@
+import 'dart:html';
+
 int getPoints(Map<String, int> team) {
   int points = 0;
   team.forEach((key, value) {
@@ -19,10 +21,8 @@ int whoWins(Map<String, int> teamA, Map<String, int> teamB) {
     return 1;
   } else if (teamAPoints < teamBPoints) {
     return 2;
-  } else {
+  } else if (teamAPoints == teamBPoints) {
     return 0;
   }
+  return -1;
 }
-
-
-
