@@ -15,5 +15,14 @@ int getPoints(Map<String, int> team) {
 int whoWins(Map<String, int> teamA, Map<String, int> teamB) {
   int teamAPoints = getPoints(teamA);
   int teamBPoints = getPoints(teamB);
-  return teamAPoints.compareTo(teamBPoints);
+  if (teamAPoints > teamBPoints) {
+    return 1;
+  } else if (teamAPoints < teamBPoints) {
+    return 2;
+  } else {
+    return 0;
+  }
 }
+
+
+
