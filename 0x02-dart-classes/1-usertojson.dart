@@ -1,4 +1,8 @@
+
+
+
 class User {
+  User({required this.name, required this.age, required this.height});
   String name = "";
 
   int age = 0;
@@ -7,14 +11,14 @@ class User {
 
   Map toJson() {
     return {
-      'name': name,
-      'age': age,
-      'height': height,
+      "name": name,
+      "age": age,
+      "height": height,
     };
   }
 
   String showName() {
-    return 'Hello $name';
+    return "Hello $name";
   }
-
 }
+
